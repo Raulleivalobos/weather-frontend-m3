@@ -1,0 +1,41 @@
+.card-clima {
+    cursor: pointer;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+
+    /* celeste suave de fondo */
+    background-color: #add8e6 !important;
+}
+
+.card-clima:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2) !important;
+}
+
+.imagen-ciudad-card {
+    height: 180px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.icono-clima {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+#vista-detalle {
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
