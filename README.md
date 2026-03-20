@@ -2,7 +2,7 @@
 
 
 
-> Una aplicación web simple para ver el clima de 10 principales ciudades de de Chile
+> Una aplicación web simple para ver el clima de 10 principales ciudades de Chile
 
 
 
@@ -88,5 +88,5 @@ Las contribuciones son bienvenidas. Para cambios importantes, por favor abre pri
 
 
 
-Este proyecto está bajo la licencia MIT.
+Este proyecto está bajo la licencia MIT y creado por Raúl Leiva
 
