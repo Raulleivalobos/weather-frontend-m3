@@ -1,0 +1,17 @@
+// PALETA "ATMÓSFERA NOCTURNA" (copiado de otro ejemplo)
+
+// 1. Fondos (Azules pizarra/grisáceos, cero negro puro)
+$bg-dark: #0f172a; // Fondo principal del body (Cielo profundo)
+$card-bg: #1e293b; // Fondo de las tarjetas (Crea un relieve elegante)
+
+// 2. Acentos (Colores vibrantes para destacar la data)
+$primary-color: #38bdf8; // Un cyan/celeste brillante (Ideal para el clima)
+$accent-color: #0ea5e9; // Azul intermedio para bordes o detalles
+
+// 3. Texto (Altos contrastes)
+$text-light: #f8fafc; // Blanco humo (No cansa la vista como el blanco puro)
+$text-muted: #94a3b8; // Gris azulado (Perfecto para días secundarios o texto de apoyo)
+
+// 4. Estilos de UI
+$border-radius-card: 16px; // Un borde un poco más redondo simula mejor una app móvil
+$transition-base: all 0.3s ease;

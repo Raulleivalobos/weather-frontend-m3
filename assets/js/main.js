@@ -15,6 +15,8 @@ const localidades = [
             "Mié: 23°C",
             "Jue: 24°C",
             "Vie: 26°C",
+            "Sab: 27°C",
+            "Dom: 23°C",
         ],
     },
     {
@@ -32,6 +34,8 @@ const localidades = [
             "Mié: 22°C",
             "Jue: 23°C",
             "Vie: 25°C",
+            "Sab: 27°C",
+            "Dom: 23°C",
         ],
     },
     {
@@ -49,6 +53,8 @@ const localidades = [
             "Mié: 19°C",
             "Jue: 18°C",
             "Vie: 17°C",
+            "Sab: 17°C",
+            "Dom: 13°C",
         ],
     },
     {
@@ -66,6 +72,8 @@ const localidades = [
             "Mié: 20°C",
             "Jue: 19°C",
             "Vie: 18°C",
+            "Sab: 17°C",
+            "Dom: 18°C",
         ],
     },
     {
@@ -74,7 +82,7 @@ const localidades = [
         temperatura: "16°C",
         estado: "Lluvia débil",
         icono: "fa-cloud-rain text-primary",
-        imagen: "https://picsum.photos/seed/concepcion/400/250",
+        imagen: "https://picsum.photos/seed/Concepcion/400/250",
         humedad: "85%",
         viento: "25 km/h",
         pronostico: [
@@ -83,6 +91,8 @@ const localidades = [
             "Mié: 16°C",
             "Jue: 17°C",
             "Vie: 15°C",
+            "Sab: 14°C",
+            "Dom: 13°C",
         ],
     },
     {
@@ -100,6 +110,8 @@ const localidades = [
             "Mié: 21°C",
             "Jue: 20°C",
             "Vie: 19°C",
+            "Sab: 17°C",
+            "Dom: 23°C",
         ],
     },
     {
@@ -117,6 +129,8 @@ const localidades = [
             "Mié: 22°C",
             "Jue: 21°C",
             "Vie: 22°C",
+            "Sab: 21°C",
+            "Dom: 23°C",
         ],
     },
     {
@@ -134,6 +148,8 @@ const localidades = [
             "Mié: 14°C",
             "Jue: 15°C",
             "Vie: 14°C",
+            "Sab: 17°C",
+            "Dom: 13°C",
         ],
     },
     {
@@ -142,7 +158,7 @@ const localidades = [
         temperatura: "12°C",
         estado: "Tormenta",
         icono: "fa-bolt text-warning",
-        imagen: "https://picsum.photos/seed/puertomontt/400/250",
+        imagen: "https://picsum.photos/seed/ptomontt/400/250",
         humedad: "92%",
         viento: "35 km/h",
         pronostico: [
@@ -151,6 +167,8 @@ const localidades = [
             "Mié: 12°C",
             "Jue: 13°C",
             "Vie: 11°C",
+            "Sab: 11°C",
+            "Dom: 13°C",
         ],
     },
     {
@@ -168,6 +186,8 @@ const localidades = [
             "Mié: 7°C",
             "Jue: 8°C",
             "Vie: 6°C",
+            "Sab: 7°C",
+            "Dom: 5°C",
         ],
     },
 ];
@@ -186,19 +206,21 @@ function renderCards() {
     let html = "";
 
     localidades.forEach((lugar) => {
+        // Ajustamos la grilla Bootstrap según la rúbrica (col-12, col-md-6, col-lg-4)
         html += `
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <article class="card card-clima h-100 shadow-sm border-0" data-id="${lugar.id}">
+        <div class="col-12 col-md-6 col-lg-4">
+            <article class="card place-card h-100 shadow-sm border-0" data-id="${lugar.id}">
                 
-                <img src="${lugar.imagen}" class="card-img-top imagen-ciudad-card" alt="Imagen de ${lugar.nombre}">
+                <img src="${lugar.imagen}" class="card-img-top place-card__image" alt="Imagen de ${lugar.nombre}">
                 
-                <div class="card-body d-flex flex-column text-center mt-2">
-                    <h5 class="card-title fw-bold text-primary mb-1">${lugar.nombre}</h5>
-                    <p class="card-text text-muted mb-2"><small>${lugar.estado}</small></p>
+                <div class="card-body d-flex flex-column text-center mt-2 place-card__body">
+                    
+                    <h5 class="card-title fw-bold text-primary mb-1 place-card__name">${lugar.nombre}</h5>
+                    <p class="card-text text-muted mb-2 place-card__state"><small>${lugar.estado}</small></p>
                     
                     <div class="mt-auto d-flex justify-content-center align-items-center gap-2">
-                        <i class="fa-solid ${lugar.icono} fs-4"></i>
-                        <h2 class="display-6 fw-bold text-dark mb-0">${lugar.temperatura}</h2>
+                        <i class="fa-solid ${lugar.icono} fs-4 place-card__icon"></i>
+                        <h2 class="display-6 fw-bold mb-0 place-card__temp">${lugar.temperatura}</h2>
                     </div>
                 </div>
             </article>
@@ -217,25 +239,27 @@ function renderDetalle(id) {
         return;
     }
 
-    // Preparar los items del pronóstico
+    // Preparar los items del pronóstico con BEM
     let pronosticoHtml = "";
     lugar.pronostico.forEach((diaInfo) => {
         pronosticoHtml += `
-        <li class="list-group-item d-flex justify-content-between align-items-center">
+        <li class="list-group-item d-flex justify-content-between align-items-center detail-view__forecast-item">
             ${diaInfo}
             <i class="fa-solid fa-cloud text-muted"></i>
         </li>`;
     });
 
-    // Inyectar el HTML del detalle con humedad, viento y pronóstico
+    // Inyectar el HTML con la estructura BEM (detail-view__card, detail-view__current, etc.)
     detalleContainer.innerHTML = `
-        <div class="row align-items-center bg-info p-4 rounded shadow-sm">
-            <div class="col-12 col-md-5 text-center mb-4 mb-md-0 border-end">
-                <i class="fa-solid ${lugar.icono} display-1 mb-3"></i>
-                <h2 class="fw-bold">${lugar.nombre}</h2>
-                <h1 class="display-3 fw-bold text-primary">${lugar.temperatura}</h1>
-                <p class="fs-4 text-muted">${lugar.estado}</p>
-                <div class="d-flex justify-content-around mt-4">
+        <div class="row align-items-center p-4 rounded shadow-sm detail-view__card">
+            
+            <div class="col-12 col-md-5 text-center mb-4 mb-md-0 border-end detail-view__current">
+                <i class="fa-solid ${lugar.icono} display-1 mb-3 detail-view__icon"></i>
+                <h2 class="fw-bold detail-view__name">${lugar.nombre}</h2>
+                <h1 class="display-3 fw-bold text-primary detail-view__temp">${lugar.temperatura}</h1>
+                <p class="fs-4 text-muted detail-view__state">${lugar.estado}</p>
+                
+                <div class="d-flex justify-content-around mt-4 detail-view__stats">
                     <div>
                         <i class="fa-solid fa-droplet text-info me-1"></i> Humedad: <br><strong>${lugar.humedad}</strong>
                     </div>
@@ -245,12 +269,13 @@ function renderDetalle(id) {
                 </div>
             </div>
 
-            <div class="col-12 col-md-7 ps-md-5">
+            <div class="col-12 col-md-7 ps-md-5 detail-view__forecast">
                 <h4 class="mb-4"><i class="fa-regular fa-calendar-days me-2"></i>Pronóstico Semanal</h4>
                 <ul class="list-group list-group-flush">
                     ${pronosticoHtml}
                 </ul>
             </div>
+            
         </div>
     `;
 }
@@ -280,7 +305,7 @@ linkHome.addEventListener("click", (e) => {
 });
 
 climaContainer.addEventListener("click", (e) => {
-    const card = e.target.closest(".card-clima");
+    const card = e.target.closest(".place-card");
     if (!card) return;
 
     const idLocalidad = Number(card.dataset.id);

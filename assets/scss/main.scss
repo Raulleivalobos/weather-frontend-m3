@@ -1,0 +1,41 @@
+// 1. Base
+@use "base/variables" as *;
+@use "base/mixins" as *;
+
+// 2. Layout
+@use "layout/header";
+@use "layout/footer";
+
+// 3. Components
+@use "components/place-card";
+@use "components/detail-view";
+
+// ESTILOS GLOBALES Y FONDOS
+// INYECTAMOS NUESTROS COLORES A BOOTSTRAP
+// Esto hace que las clases como .text-primary o .bg-dark usen mis colores
+
+:root {
+    --bs-body-bg: #{$bg-dark}; // Fondo general
+    --bs-body-color: #{$text-light}; // Texto general
+    --bs-primary: #{$primary-color}; // Para .text-primary
+    --bs-secondary-color: #{$text-muted}; // Para .text-muted
+}
+
+body {
+    min-height: 100vh;
+    position: relative;
+    z-index: 0;
+}
+
+//CAPA ATMOSFÉRICA (copiado de un ejemplo)
+.bg-atmosphere {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $bg-dark;
+    background-image: radial-gradient(circle at top, #1e2f45 0%, $bg-dark 80%);
+    z-index: -1;
+    pointer-events: none;
+}
