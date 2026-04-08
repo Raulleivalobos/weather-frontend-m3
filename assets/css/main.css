@@ -1,77 +1,81 @@
 footer {
-  background-color: #1e293b;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: #1e293b;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 footer {
-  background-color: #1e293b;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: #1e293b;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .place-card {
-  --bs-card-bg: #1e293b;
-  border-radius: 16px;
-  overflow: hidden;
-  border: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+    --bs-card-bg: #1e293b;
+    border-radius: 16px;
+    overflow: hidden;
+    border: none;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    cursor: pointer;
 }
 .place-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 15px rgba(56, 189, 248, 0.15) !important;
+    transform: translateY(-5px);
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.6),
+        0 0 15px rgba(56, 189, 248, 0.15) !important;
 }
 .place-card__image {
-  height: 180px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
+    height: 180px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
 }
 .place-card__icon {
-  font-size: 3.5rem;
-  margin-bottom: 15px;
-  transition: transform 0.3s ease;
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
 }
 .place-card:hover .place-card__icon {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 .place-card__name {
-  letter-spacing: 0.5px;
+    letter-spacing: 0.5px;
 }
 .place-card__state {
-  color: #94a3b8;
+    color: #94a3b8;
 }
 
 .detail-view__card {
-  background-color: #1e293b;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
+    background-color: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
 }
 .detail-view__forecast-item {
-  background-color: transparent;
-  border-color: rgba(255, 255, 255, 0.1);
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.1);
 }
 
 :root {
-  --bs-body-bg: #0f172a;
-  --bs-body-color: #f8fafc;
-  --bs-primary: #38bdf8;
-  --bs-secondary-color: #94a3b8;
+    --bs-body-bg: #0f172a;
+    --bs-body-color: #f8fafc;
+    --bs-primary: #38bdf8;
+    --bs-secondary-color: #94a3b8;
 }
 
 body {
-  min-height: 100vh;
-  position: relative;
-  z-index: 0;
+    min-height: 100vh;
+    position: relative;
+    z-index: 0;
 }
 
 .bg-atmosphere {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #0f172a;
-  background-image: radial-gradient(circle at top, #1e2f45 0%, #0f172a 80%);
-  z-index: -1;
-  pointer-events: none;
-}/*# sourceMappingURL=main.css.map */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0f172a;
+    background-image: radial-gradient(circle at top, #1e2f45 0%, #0f172a 80%);
+    z-index: -1;
+    pointer-events: none;
+} /*# sourceMappingURL=main.css.map */

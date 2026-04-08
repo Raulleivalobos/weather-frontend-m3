@@ -3,12 +3,10 @@
 @use "../base/mixins" as *;
 
 .place-card {
-    // Le decimos a Bootstrap que esta tarjeta usa nuestros colores
     --bs-card-bg: #{$card-bg};
-
     border-radius: $border-radius-card;
     overflow: hidden;
-    border: none; // Evitamos bordes grises
+    border: none;
     @include card-hover-effect;
 
     &__image {
@@ -20,10 +18,11 @@
     &__icon {
         font-size: 3.5rem;
         margin-bottom: 15px;
-        transition: transform 0.3s ease;
+        transition: $transition-base; // <-- Usamos la variable aquí también
 
         .place-card:hover & {
             transform: scale(1.1);
+            color: $accent-color; // <-- ¡Le damos uso al color de acento!
         }
     }
 

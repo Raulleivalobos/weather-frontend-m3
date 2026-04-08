@@ -2,19 +2,13 @@
 @use "variables" as *;
 
 @mixin card-hover-effect {
-    // Aseguramos que la transición sea fluida
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+    transition: $transition-base;
     cursor: pointer;
 
     &:hover {
-        // Mantiene el efecto de subida
         transform: translateY(-5px);
-
-        // Magia de Dark Mode: Sombra negra más fuerte + un leve resplandor de nuestro color celeste
         box-shadow:
             0 15px 30px rgba(0, 0, 0, 0.6),
-            0 0 15px rgba($primary-color, 0.15) !important;
+            0 0 15px rgba($primary-color, 0.15);
     }
 }

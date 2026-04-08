@@ -1,3 +1,8 @@
+// Archivo: main.scss
+// ==========================================
+// MAIN SASS (Arquitectura con @use)
+// ==========================================
+
 // 1. Base
 @use "base/variables" as *;
 @use "base/mixins" as *;
@@ -10,15 +15,19 @@
 @use "components/place-card";
 @use "components/detail-view";
 
+// ==========================================
 // ESTILOS GLOBALES Y FONDOS
-// INYECTAMOS NUESTROS COLORES A BOOTSTRAP
-// Esto hace que las clases como .text-primary o .bg-dark usen mis colores
+// ==========================================
 
+// INYECTAMOS NUESTROS COLORES Y TIPOGRAFÍA A BOOTSTRAP
 :root {
-    --bs-body-bg: #{$bg-dark}; // Fondo general
-    --bs-body-color: #{$text-light}; // Texto general
-    --bs-primary: #{$primary-color}; // Para .text-primary
-    --bs-secondary-color: #{$text-muted}; // Para .text-muted
+    --bs-body-bg: #{$bg-dark};
+    --bs-body-color: #{$text-light};
+    --bs-primary: #{$primary-color};
+    --bs-secondary-color: #{$text-muted};
+
+    // Le decimos a Bootstrap que use Poppins (ya precargada en el HTML)
+    --bs-font-sans-serif: "Poppins", sans-serif;
 }
 
 body {
@@ -27,15 +36,17 @@ body {
     z-index: 0;
 }
 
-//CAPA ATMOSFÉRICA (copiado de un ejemplo)
+// Nuestra capa de fondo atmosférico
 .bg-atmosphere {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+
     background-color: $bg-dark;
     background-image: radial-gradient(circle at top, #1e2f45 0%, $bg-dark 80%);
+
     z-index: -1;
     pointer-events: none;
 }
